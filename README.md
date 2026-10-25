@@ -10,7 +10,7 @@ A small Windows Forms front-end for [yt-dlp](https://github.com/yt-dlp/yt-dlp). 
 
 ## Requirements
 
-- Windows x64 and the .NET 10 SDK (to build). The published exe needs no .NET runtime.
+- Windows x64 and the .NET 10 SDK (to build). The self-contained exe needs no .NET runtime; the smaller framework-dependent exe needs the .NET 10 Desktop Runtime.
 - `yt-dlp.exe`: put it next to `YtDlpGUI.exe`, put it on `PATH`, or browse to it in the app
 - `ffmpeg.exe` (for **Audio Only** MP3 conversion and for merging separate video and audio streams): next to `yt-dlp.exe` or on `PATH`. The app warns if it can't find it.
 
@@ -21,9 +21,16 @@ dotnet build YtDlpGUI.csproj
 dotnet run --project YtDlpGUI.csproj
 ```
 
-A Release build (`dotnet build -c Release`, or Build in Visual Studio with the Release configuration) also publishes a single self-contained `YtDlpGUI.exe` (about 50 MB, no .NET runtime needed) to `%LOCALAPPDATA%\build\YtDlpGUI\bin\Release\net10.0-windows\win-x64\publish\`. `dotnet publish -c Release` produces the same file.
+A Release build (`dotnet build -c Release`, or Build in Visual Studio with the Release configuration) also publishes two single-file exes into one folder, `%LOCALAPPDATA%\build\YtDlpGUI\bin\Release\net10.0-windows\win-x64\release\`:
 
-**Why is the exe about 50 MB for such a small app?** The app's own code is only about 160 KB. The rest is the .NET runtime and the Windows Forms libraries, bundled into the exe (and compressed) so you don't have to install .NET first. Nothing else is hidden in there. If you'd rather have a tiny exe, switch the csproj to a framework-dependent publish (`<SelfContained>false</SelfContained>`). It then needs the .NET 10 Desktop Runtime installed.
+| File | Size | .NET runtime |
+| --- | --- | --- |
+| `YtDlpGUI-self-contained.exe` | about 50 MB | Bundled, nothing to install |
+| `YtDlpGUI-framework-dependent.exe` | about 400 KB | Needs the [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) (x64) installed |
+
+`dotnet publish -c Release` produces only the self-contained one, as `YtDlpGUI.exe` in `publish\`.
+
+**Why is the self-contained exe about 50 MB for such a small app?** The app's own code is only about 160 KB. The rest is the .NET runtime and the Windows Forms libraries, bundled into the exe (and compressed) so you don't have to install .NET first. Nothing else is hidden in there. If you already have the .NET 10 Desktop Runtime, use the framework-dependent exe instead.
 
 Build output goes to `%LOCALAPPDATA%\build\YtDlpGUI\{bin,obj}\` (see `Directory.Build.props`) rather than the project folder, because the sources live on Google Drive.
 

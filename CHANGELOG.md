@@ -19,7 +19,7 @@ First public release.
 - Local settings store at `%LOCALAPPDATA%\YtDlpGUI\settings.json` (yt-dlp path, save folder, language, dark mode, audio/video mode, video format and quality, window position and size). Values from the old .NET user settings are imported once.
 - About dialog with version, build number and date, license, project links and the unofficial-project disclaimer.
 - Build number versioning: `1.0.<days since 2000-01-01>`, computed automatically at build time.
-- Release builds publish a single self-contained `YtDlpGUI.exe` (no .NET runtime or extra files needed). A plain Release build also publishes.
+- Release builds publish two single-file exes into one `release\` folder: `YtDlpGUI-self-contained.exe` (about 50 MB, no .NET runtime needed) and a small `YtDlpGUI-framework-dependent.exe` (about 400 KB, needs the .NET 10 Desktop Runtime). A plain Release build also publishes.
 - MIT license, and README with screenshot, disclaimer and an explanation of the exe size.
 
 ### Changed

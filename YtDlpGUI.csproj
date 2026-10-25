@@ -64,10 +64,25 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <!-- A plain Release build (dotnet build -c Release, or Build in Visual Studio) also publishes the single exe.
+  <!-- A plain Release build (dotnet build -c Release, or Build in Visual Studio) also publishes two single-file exes:
+         publish\                     self-contained (includes the .NET runtime, ~50 MB)
+         publish-framework-dependent\ needs the .NET 10 Desktop Runtime installed (much smaller)
+         release\                     both, renamed YtDlpGUI-self-contained.exe / YtDlpGUI-framework-dependent.exe
        Skipped when publishing explicitly, to avoid running Publish twice. -->
-  <Target Name="PublishAfterBuild" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' and '$(_IsPublishing)' != 'true'">
+  <Target Name="PublishAfterBuild" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' and '$(_IsPublishing)' != 'true' and '$(FrameworkDependentPass)' != 'true'">
     <CallTarget Targets="Publish" />
+    <!-- Separate project instance (different global properties) with its own obj/out dirs so nothing is shared with the self-contained pass. -->
+    <MSBuild Projects="$(MSBuildProjectFullPath)" Targets="Publish"
+             Properties="FrameworkDependentPass=true;SelfContained=false;EnableCompressionInSingleFile=false;IntermediateOutputPath=$(BaseIntermediateOutputPath)$(Configuration)\fdd\;OutDir=$(BaseOutputPath)$(Configuration)\fdd\;PublishDir=$(BaseOutputPath)$(Configuration)\$(TargetFramework)\$(RuntimeIdentifier)\publish-framework-dependent\" />
+    <!-- Collect both exes under distinct names in one folder, ready to upload as release assets. -->
+    <PropertyGroup>
+      <ReleaseDir>$(BaseOutputPath)$(Configuration)\$(TargetFramework)\$(RuntimeIdentifier)\release\</ReleaseDir>
+      <PublishRoot>$(BaseOutputPath)$(Configuration)\$(TargetFramework)\$(RuntimeIdentifier)\</PublishRoot>
+    </PropertyGroup>
+    <MakeDir Directories="$(ReleaseDir)" />
+    <Copy SourceFiles="$(PublishRoot)publish\$(AssemblyName).exe" DestinationFiles="$(ReleaseDir)$(AssemblyName)-self-contained.exe" />
+    <Copy SourceFiles="$(PublishRoot)publish-framework-dependent\$(AssemblyName).exe" DestinationFiles="$(ReleaseDir)$(AssemblyName)-framework-dependent.exe" />
+    <Message Importance="high" Text="Release files: $(ReleaseDir)" />
   </Target>
 
   <!-- App.config only holds legacy defaults that AppSettings can import; it is not needed next to the published exe. -->
