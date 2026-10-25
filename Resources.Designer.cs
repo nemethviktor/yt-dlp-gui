@@ -71,6 +71,24 @@ namespace YtDlpGUI {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "About"
+        /// </summary>
+        public static string btn_About {
+            get {
+                return ResourceManager.GetString("btn_About", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "Close"
+        /// </summary>
+        public static string btn_About_Close {
+            get {
+                return ResourceManager.GetString("btn_About_Close", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Cancel"
         /// </summary>
         public static string btn_Cancel {
@@ -116,6 +134,24 @@ namespace YtDlpGUI {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "Version {0}, build {1} ({2:yyyy-MM-dd})"
+        /// </summary>
+        public static string fmt_AboutVersion {
+            get {
+                return ResourceManager.GetString("fmt_AboutVersion", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "About yt-dlp GUI"
+        /// </summary>
+        public static string frmAbout {
+            get {
+                return ResourceManager.GetString("frmAbout", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Download Settings"
         /// </summary>
         public static string gbx_DownloadSettings {
@@ -130,6 +166,24 @@ namespace YtDlpGUI {
         public static string gbx_Language {
             get {
                 return ResourceManager.GetString("gbx_Language", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "A small, simple front-end for yt-dlp."
+        /// </summary>
+        public static string lbl_About_Description {
+            get {
+                return ResourceManager.GetString("lbl_About_Description", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "This is an independent, unofficial tool. It is not..."
+        /// </summary>
+        public static string lbl_About_Disclaimer {
+            get {
+                return ResourceManager.GetString("lbl_About_Disclaimer", resourceCulture) ?? string.Empty;
             }
         }
 
@@ -152,87 +206,6 @@ namespace YtDlpGUI {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to "YT-DLP Location"
-        /// </summary>
-        public static string lbl_YTDLP_Location {
-            get {
-                return ResourceManager.GetString("lbl_YTDLP_Location", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "URL must be provided...!"
-        /// </summary>
-        public static string msgb_MissingURL {
-            get {
-                return ResourceManager.GetString("msgb_MissingURL", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "YT-DLP Location must be provided...!"
-        /// </summary>
-        public static string msgb_MissingYTDLP_Location {
-            get {
-                return ResourceManager.GetString("msgb_MissingYTDLP_Location", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "About"
-        /// </summary>
-        public static string btn_About {
-            get {
-                return ResourceManager.GetString("btn_About", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "About yt-dlp GUI"
-        /// </summary>
-        public static string frmAbout {
-            get {
-                return ResourceManager.GetString("frmAbout", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "Close"
-        /// </summary>
-        public static string btn_About_Close {
-            get {
-                return ResourceManager.GetString("btn_About_Close", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "A small, simple front-end for yt-dlp."
-        /// </summary>
-        public static string lbl_About_Description {
-            get {
-                return ResourceManager.GetString("lbl_About_Description", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "This is an independent, unofficial tool. It is not endorsed by, affiliated with, or sponsored by yt-dlp or YouTube. You are responsible for following the terms of service of the sites you use and applicable copyright law."
-        /// </summary>
-        public static string lbl_About_Disclaimer {
-            get {
-                return ResourceManager.GetString("lbl_About_Disclaimer", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "Version {0}, build {1} ({2:yyyy-MM-dd})"
-        /// </summary>
-        public static string fmt_AboutVersion {
-            get {
-                return ResourceManager.GetString("fmt_AboutVersion", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to "Video Format"
         /// </summary>
         public static string lbl_VideoFormat {
@@ -251,47 +224,20 @@ namespace YtDlpGUI {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to "Best"
+        ///   Looks up a localized string similar to "YT-DLP Location"
         /// </summary>
-        public static string opt_QualityBest {
+        public static string lbl_YTDLP_Location {
             get {
-                return ResourceManager.GetString("opt_QualityBest", resourceCulture) ?? string.Empty;
+                return ResourceManager.GetString("lbl_YTDLP_Location", resourceCulture) ?? string.Empty;
             }
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to "Please enter a valid http(s) URL...!"
+        ///   Looks up a localized string similar to "Download cancelled."
         /// </summary>
-        public static string msgb_InvalidURL {
+        public static string msgb_DownloadCancelled {
             get {
-                return ResourceManager.GetString("msgb_InvalidURL", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "YT-DLP was not found at the given location...!"
-        /// </summary>
-        public static string msgb_YTDLPNotFound {
-            get {
-                return ResourceManager.GetString("msgb_YTDLPNotFound", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "ffmpeg was not found (needed for audio conversion and for merging video). Put ffmpeg.exe next to yt-dlp.exe or on PATH."
-        /// </summary>
-        public static string msgb_FfmpegMissing {
-            get {
-                return ResourceManager.GetString("msgb_FfmpegMissing", resourceCulture) ?? string.Empty;
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to "The save folder is invalid or cannot be created...!"
-        /// </summary>
-        public static string msgb_SaveFolderError {
-            get {
-                return ResourceManager.GetString("msgb_SaveFolderError", resourceCulture) ?? string.Empty;
+                return ResourceManager.GetString("msgb_DownloadCancelled", resourceCulture) ?? string.Empty;
             }
         }
 
@@ -314,11 +260,38 @@ namespace YtDlpGUI {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to "Download cancelled."
+        ///   Looks up a localized string similar to "ffmpeg was not found (needed for audio conversion ..."
         /// </summary>
-        public static string msgb_DownloadCancelled {
+        public static string msgb_FfmpegMissing {
             get {
-                return ResourceManager.GetString("msgb_DownloadCancelled", resourceCulture) ?? string.Empty;
+                return ResourceManager.GetString("msgb_FfmpegMissing", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "Please enter a valid http(s) URL...!"
+        /// </summary>
+        public static string msgb_InvalidURL {
+            get {
+                return ResourceManager.GetString("msgb_InvalidURL", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "URL must be provided...!"
+        /// </summary>
+        public static string msgb_MissingURL {
+            get {
+                return ResourceManager.GetString("msgb_MissingURL", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "YT-DLP Location must be provided...!"
+        /// </summary>
+        public static string msgb_MissingYTDLP_Location {
+            get {
+                return ResourceManager.GetString("msgb_MissingYTDLP_Location", resourceCulture) ?? string.Empty;
             }
         }
 
@@ -332,11 +305,38 @@ namespace YtDlpGUI {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "The save folder is invalid or cannot be created......"
+        /// </summary>
+        public static string msgb_SaveFolderError {
+            get {
+                return ResourceManager.GetString("msgb_SaveFolderError", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Could not start YT-DLP: {0}"
         /// </summary>
         public static string msgb_StartFailed {
             get {
                 return ResourceManager.GetString("msgb_StartFailed", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "YT-DLP was not found at the given location...!"
+        /// </summary>
+        public static string msgb_YTDLPNotFound {
+            get {
+                return ResourceManager.GetString("msgb_YTDLPNotFound", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "Best"
+        /// </summary>
+        public static string opt_QualityBest {
+            get {
+                return ResourceManager.GetString("opt_QualityBest", resourceCulture) ?? string.Empty;
             }
         }
 
@@ -385,6 +385,14 @@ namespace YtDlpGUI {
     public enum StringResourceKey
     {
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        btn_About,
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        btn_About_Close,
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         btn_Cancel,
@@ -405,6 +413,14 @@ namespace YtDlpGUI {
         /// </summary>
         cbx_DarkMode,
         /// <summary>
+        ///   Looks up a localized string similar to Version {0}, build {1} ({2:yyyy-MM-dd}).
+        /// </summary>
+        fmt_AboutVersion,
+        /// <summary>
+        ///   Looks up a localized string similar to About yt-dlp GUI.
+        /// </summary>
+        frmAbout,
+        /// <summary>
         ///   Looks up a localized string similar to Download Settings.
         /// </summary>
         gbx_DownloadSettings,
@@ -412,6 +428,14 @@ namespace YtDlpGUI {
         ///   Looks up a localized string similar to Language.
         /// </summary>
         gbx_Language,
+        /// <summary>
+        ///   Looks up a localized string similar to A small, simple front-end for yt-dlp..
+        /// </summary>
+        lbl_About_Description,
+        /// <summary>
+        ///   Looks up a localized string similar to This is an independent, unofficial tool. It is not....
+        /// </summary>
+        lbl_About_Disclaimer,
         /// <summary>
         ///   Looks up a localized string similar to Save Where?.
         /// </summary>
@@ -421,42 +445,6 @@ namespace YtDlpGUI {
         /// </summary>
         lbl_URL,
         /// <summary>
-        ///   Looks up a localized string similar to YT-DLP Location.
-        /// </summary>
-        lbl_YTDLP_Location,
-        /// <summary>
-        ///   Looks up a localized string similar to URL must be provided...!.
-        /// </summary>
-        msgb_MissingURL,
-        /// <summary>
-        ///   Looks up a localized string similar to YT-DLP Location must be provided...!.
-        /// </summary>
-        msgb_MissingYTDLP_Location,
-        /// <summary>
-        ///   Looks up a localized string similar to About.
-        /// </summary>
-        btn_About,
-        /// <summary>
-        ///   Looks up a localized string similar to About yt-dlp GUI.
-        /// </summary>
-        frmAbout,
-        /// <summary>
-        ///   Looks up a localized string similar to Close.
-        /// </summary>
-        btn_About_Close,
-        /// <summary>
-        ///   Looks up a localized string similar to A small, simple front-end for yt-dlp..
-        /// </summary>
-        lbl_About_Description,
-        /// <summary>
-        ///   Looks up a localized string similar to This is an independent, unofficial tool. It is not endorsed by, affiliated with, or sponsored by yt-dlp or YouTube. You are responsible for following the terms of service of the sites you use and applicable copyright law..
-        /// </summary>
-        lbl_About_Disclaimer,
-        /// <summary>
-        ///   Looks up a localized string similar to Version {0}, build {1} ({2:yyyy-MM-dd}).
-        /// </summary>
-        fmt_AboutVersion,
-        /// <summary>
         ///   Looks up a localized string similar to Video Format.
         /// </summary>
         lbl_VideoFormat,
@@ -465,25 +453,13 @@ namespace YtDlpGUI {
         /// </summary>
         lbl_VideoQuality,
         /// <summary>
-        ///   Looks up a localized string similar to Best.
+        ///   Looks up a localized string similar to YT-DLP Location.
         /// </summary>
-        opt_QualityBest,
+        lbl_YTDLP_Location,
         /// <summary>
-        ///   Looks up a localized string similar to Please enter a valid http(s) URL...!.
+        ///   Looks up a localized string similar to Download cancelled..
         /// </summary>
-        msgb_InvalidURL,
-        /// <summary>
-        ///   Looks up a localized string similar to YT-DLP was not found at the given location...!.
-        /// </summary>
-        msgb_YTDLPNotFound,
-        /// <summary>
-        ///   Looks up a localized string similar to ffmpeg was not found (needed for audio conversion and for merging video). Put ffmpeg.exe next to yt-dlp.exe or on PATH..
-        /// </summary>
-        msgb_FfmpegMissing,
-        /// <summary>
-        ///   Looks up a localized string similar to The save folder is invalid or cannot be created...!.
-        /// </summary>
-        msgb_SaveFolderError,
+        msgb_DownloadCancelled,
         /// <summary>
         ///   Looks up a localized string similar to Download finished..
         /// </summary>
@@ -493,17 +469,41 @@ namespace YtDlpGUI {
         /// </summary>
         msgb_DownloadFailed,
         /// <summary>
-        ///   Looks up a localized string similar to Download cancelled..
+        ///   Looks up a localized string similar to ffmpeg was not found (needed for audio conversion ....
         /// </summary>
-        msgb_DownloadCancelled,
+        msgb_FfmpegMissing,
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid http(s) URL...!.
+        /// </summary>
+        msgb_InvalidURL,
+        /// <summary>
+        ///   Looks up a localized string similar to URL must be provided...!.
+        /// </summary>
+        msgb_MissingURL,
+        /// <summary>
+        ///   Looks up a localized string similar to YT-DLP Location must be provided...!.
+        /// </summary>
+        msgb_MissingYTDLP_Location,
         /// <summary>
         ///   Looks up a localized string similar to Restart the application to apply the colour mode..
         /// </summary>
         msgb_RestartRequired,
         /// <summary>
+        ///   Looks up a localized string similar to The save folder is invalid or cannot be created.......
+        /// </summary>
+        msgb_SaveFolderError,
+        /// <summary>
         ///   Looks up a localized string similar to Could not start YT-DLP: {0}.
         /// </summary>
         msgb_StartFailed,
+        /// <summary>
+        ///   Looks up a localized string similar to YT-DLP was not found at the given location...!.
+        /// </summary>
+        msgb_YTDLPNotFound,
+        /// <summary>
+        ///   Looks up a localized string similar to Best.
+        /// </summary>
+        opt_QualityBest,
         /// <summary>
         ///   Looks up a localized string similar to Audio Only.
         /// </summary>

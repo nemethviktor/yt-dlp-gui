@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-YtDlpGUI is a small Windows Forms front-end (.NET 10, `net10.0-windows10.0.26100.0`, nullable + implicit usings enabled) that runs `yt-dlp` for a URL. See `README.md` for usage. There are no tests, no linter config beyond `.editorconfig`, and the repo is not under git.
+YtDlpGUI is a small Windows Forms front-end (.NET 10, `net10.0-windows`, nullable + implicit usings enabled) that runs `yt-dlp` for a URL. See `README.md` for usage. There are no tests and no linter config beyond `.editorconfig`. The repo is on GitHub (`nemethviktor/yt-dlp-gui`, branch `main`), with releases tagged `v1.0.<build>`.
 
 ## Commands
 
