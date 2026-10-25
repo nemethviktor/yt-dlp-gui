@@ -10,6 +10,7 @@ YtDlpGUI is a small Windows Forms front-end (.NET 10, `net10.0-windows10.0.26100
 
 - Build: `dotnet build YtDlpGUI.csproj`
 - Run: `dotnet run --project YtDlpGUI.csproj`
+- Release: `dotnet build -c Release` also publishes (the `PublishAfterBuild` target in the csproj) a self-contained single-file `YtDlpGUI.exe` to `...\bin\Release\net10.0-windows\win-x64\publish\`. The target is skipped under an explicit `dotnet publish`, and the Release-only properties (win-x64, self-contained, single-file) live in the csproj. The target framework is plain `net10.0-windows` to avoid the unused 27 MB Windows SDK projection DLL.
 
 Build output does **not** go to `bin\`/`obj\` in the repo. `Directory.Build.props` redirects it to `%LOCALAPPDATA%\build\YtDlpGUI\{bin,obj}\` because the repo lives on Google Drive, whose sync client locks `obj\` mid-build. Look there for the built exe. `yt-dlp.exe` is expected next to the built exe (`AppDomain.CurrentDomain.BaseDirectory`) unless the user picks another path.
 

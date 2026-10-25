@@ -10,7 +10,7 @@ A small Windows Forms front-end for [yt-dlp](https://github.com/yt-dlp/yt-dlp). 
 
 ## Requirements
 
-- Windows, .NET 10 SDK (to build) or the .NET 10 Desktop Runtime (to run)
+- Windows x64 and the .NET 10 SDK (to build). The published exe needs no .NET runtime.
 - `yt-dlp.exe`: put it next to `YtDlpGUI.exe`, put it on `PATH`, or browse to it in the app
 - `ffmpeg.exe` (for **Audio Only** MP3 conversion and for merging separate video and audio streams): next to `yt-dlp.exe` or on `PATH`. The app warns if it can't find it.
 
@@ -20,6 +20,10 @@ A small Windows Forms front-end for [yt-dlp](https://github.com/yt-dlp/yt-dlp). 
 dotnet build YtDlpGUI.csproj
 dotnet run --project YtDlpGUI.csproj
 ```
+
+A Release build (`dotnet build -c Release`, or Build in Visual Studio with the Release configuration) also publishes a single self-contained `YtDlpGUI.exe` (about 50 MB, no .NET runtime needed) to `%LOCALAPPDATA%\build\YtDlpGUI\bin\Release\net10.0-windows\win-x64\publish\`. `dotnet publish -c Release` produces the same file.
+
+**Why is the exe about 50 MB for such a small app?** The app's own code is only about 160 KB. The rest is the .NET runtime and the Windows Forms libraries, bundled into the exe (and compressed) so you don't have to install .NET first. Nothing else is hidden in there. If you'd rather have a tiny exe, switch the csproj to a framework-dependent publish (`<SelfContained>false</SelfContained>`). It then needs the .NET 10 Desktop Runtime installed.
 
 Build output goes to `%LOCALAPPDATA%\build\YtDlpGUI\{bin,obj}\` (see `Directory.Build.props`) rather than the project folder, because the sources live on Google Drive.
 

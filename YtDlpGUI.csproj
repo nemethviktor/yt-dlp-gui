@@ -2,13 +2,23 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <StartupObject>YtDlpGUI.Program</StartupObject>
     <PackageIcon>banner.png</PackageIcon>
     <ApplicationIcon>appicon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <!-- Release builds/publish produce one standalone, self-contained exe (no .dll or .NET runtime needed). -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -49,6 +59,17 @@
       <Generator></Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <!-- A plain Release build (dotnet build -c Release, or Build in Visual Studio) also publishes the single exe.
+       Skipped when publishing explicitly, to avoid running Publish twice. -->
+  <Target Name="PublishAfterBuild" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' and '$(_IsPublishing)' != 'true'">
+    <CallTarget Targets="Publish" />
+  </Target>
+
+  <!-- App.config only holds legacy defaults that AppSettings can import; it is not needed next to the published exe. -->
+  <Target Name="RemoveConfigFromPublish" AfterTargets="Publish">
+    <Delete Files="$(PublishDir)$(TargetFileName).config" />
+  </Target>
 
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
