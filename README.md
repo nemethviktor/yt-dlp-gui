@@ -2,6 +2,10 @@
 
 A small Windows Forms front-end for [yt-dlp](https://github.com/yt-dlp/yt-dlp). Paste a URL, pick a folder, choose audio-only (MP3) or video, and download. yt-dlp's output is shown live in a log box.
 
+## Screenshot
+
+![yt-dlp GUI main window](docs/screenshot.png)
+
 > **Disclaimer:** This project is an independent, unofficial tool. It is not endorsed by, affiliated with, or sponsored by yt-dlp or YouTube. "YouTube" is a trademark of Google LLC. You are responsible for making sure your downloads comply with the terms of service of the sites you use and with applicable copyright law.
 
 ## Requirements
