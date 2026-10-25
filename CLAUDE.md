@@ -18,12 +18,14 @@ Build output does **not** go to `bin\`/`obj\` in the repo. `Directory.Build.prop
 
 - `Program.cs` sets the colour mode from settings (must happen before any window exists), then starts `frmMain`, the only form. `frmMain.Designer.cs` is designer-generated, so keep hand edits consistent with it.
 - `frmMain.cs` validates input (http(s) URL, yt-dlp exists, save folder creatable), then runs `yt-dlp` directly (no `cmd.exe`) with `ProcessStartInfo.ArgumentList`, so paths and URLs are never string-concatenated into a command line. Output is streamed asynchronously into `tbx_Log`, and Cancel kills the process tree.
+- Version is `1.0.$(BuildNumber)`, computed in the csproj as days since 2000-01-01 on the build date, so it changes daily with no manual bump. `frmAbout` (opened by `btn_About`) reads it from the assembly version and derives the build date from it.
+- User-visible changes should get an entry under `[Unreleased]` in `CHANGELOG.md`.
 - `Helpers/HelperToolLocator` finds `yt-dlp.exe`/`ffmpeg.exe` (saved path, app folder, then `PATH`).
 - Settings live in `Helpers/AppSettings` (JSON at `%LOCALAPPDATA%\YtDlpGUI\settings.json`, accessed via `AppSettings.Current`). `SaveSettings()` in `frmMain` writes them on download start and on close. The legacy `Properties/Settings.settings` + `App.config` are kept only so `AppSettings` can import old values once, when the JSON file doesn't exist yet. Don't add new settings there. Language changes apply live, and dark mode applies on next launch.
 
 ### Localisation (non-obvious)
 
-UI text is not set in the designer. `ReloadAllControlLabels` walks every control recursively and sets `control.Text` to the resource string whose **key equals `control.Name`**, looked up via `Helpers/HelperLocalisationResourceManager`.
+UI text is not set in the designer. `HelperLocalisationResourceManager.ApplyLabels` (used by both `frmMain` and `frmAbout`) walks every control recursively and sets `control.Text` to the resource string whose **key equals `control.Name`**, looked up via `Helpers/HelperLocalisationResourceManager`.
 
 - To add or rename a labelled control, add a matching key in both `Resources.resx` (neutral, en-GB) and `Resources.hu.resx` (Hungarian).
 - Message-box strings are accessed as typed properties (`YtDlpGUI.Resources.msgb_*`) from `Resources.Designer.cs`.

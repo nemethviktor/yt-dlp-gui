@@ -49,6 +49,7 @@
             rbt_Lang_en = new RadioButton();
             cbx_DarkMode = new CheckBox();
             tbx_Log = new TextBox();
+            btn_About = new Button();
             lbl_VideoFormat = new Label();
             cbo_VideoFormat = new ComboBox();
             lbl_VideoQuality = new Label();
@@ -287,6 +288,17 @@
             cbo_VideoQuality.Size = new Size(229, 38);
             cbo_VideoQuality.TabIndex = 16;
             //
+            // btn_About
+            //
+            btn_About.Location = new Point(857, 610);
+            btn_About.Margin = new Padding(5, 6, 5, 6);
+            btn_About.Name = "btn_About";
+            btn_About.Size = new Size(129, 46);
+            btn_About.TabIndex = 17;
+            btn_About.Text = "btn_About";
+            btn_About.UseVisualStyleBackColor = true;
+            btn_About.Click += btn_About_Click;
+            //
             // tbx_Log
             // 
             tbx_Log.Location = new Point(22, 680);
@@ -310,6 +322,7 @@
             Controls.Add(lbl_VideoQuality);
             Controls.Add(cbo_VideoFormat);
             Controls.Add(lbl_VideoFormat);
+            Controls.Add(btn_About);
             Controls.Add(tbx_Log);
             Controls.Add(cbx_DarkMode);
             Controls.Add(gbx_Language);
@@ -360,6 +373,7 @@
         private RadioButton rbt_Lang_en;
         private CheckBox cbx_DarkMode;
         private TextBox tbx_Log;
+        private Button btn_About;
         private Label lbl_VideoFormat;
         private ComboBox cbo_VideoFormat;
         private Label lbl_VideoQuality;

@@ -9,6 +9,10 @@
     <StartupObject>YtDlpGUI.Program</StartupObject>
     <PackageIcon>banner.png</PackageIcon>
     <ApplicationIcon>appicon.ico</ApplicationIcon>
+    <!-- Version is 1.0.<build>, where build = days since 2000-01-01 (shown in the About dialog). -->
+    <BuildNumber>$([System.DateTime]::Today.Subtract($([System.DateTime]::Parse('2000-01-01'))).Days)</BuildNumber>
+    <VersionPrefix>1.0.$(BuildNumber)</VersionPrefix>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   </PropertyGroup>
 
   <!-- Release builds/publish produce one standalone, self-contained exe (no .dll or .NET runtime needed). -->

@@ -203,4 +203,22 @@ Mégis folytatja?</value>
   <data name="opt_QualityBest" xml:space="preserve">
     <value>Legjobb</value>
   </data>
+  <data name="btn_About" xml:space="preserve">
+    <value>Névjegy</value>
+  </data>
+  <data name="frmAbout" xml:space="preserve">
+    <value>A yt-dlp GUI névjegye</value>
+  </data>
+  <data name="btn_About_Close" xml:space="preserve">
+    <value>Bezár</value>
+  </data>
+  <data name="lbl_About_Description" xml:space="preserve">
+    <value>Egy kicsi, egyszerű felület a yt-dlp-hez.</value>
+  </data>
+  <data name="lbl_About_Disclaimer" xml:space="preserve">
+    <value>Ez egy független, nem hivatalos eszköz. A yt-dlp vagy a YouTube nem támogatja, nem áll vele kapcsolatban, és nem szponzorálja. Ön felel azért, hogy a használt oldalak felhasználási feltételeit és a vonatkozó szerzői jogi szabályokat betartsa.</value>
+  </data>
+  <data name="fmt_AboutVersion" xml:space="preserve">
+    <value>Verzió {0}, build {1} ({2:yyyy-MM-dd})</value>
+  </data>
 </root>

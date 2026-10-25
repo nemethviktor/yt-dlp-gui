@@ -34,6 +34,8 @@ Build output goes to `%LOCALAPPDATA%\build\YtDlpGUI\{bin,obj}\` (see `Directory.
 3. Choose **Audio Only** (MP3) or **Video Also**. For video, pick a container (mp4, mkv, webm) and a maximum quality (Best, or 2160p down to 360p) and press **OK**. Only the single video is downloaded, never the whole playlist.
 4. **Cancel** stops a running download. When nothing is running it closes the app.
 
+The **About** button shows the version, build number, license and project links. The version is `1.0.<build>`, where the build number is the number of days since 1 January 2000 on the day it was built (for example, build 9794 is 25 October 2026).
+
 Settings are stored in `%LOCALAPPDATA%\YtDlpGUI\settings.json`: yt-dlp path, save folder, language, dark mode, audio/video mode, video format and quality, and window position and size. They are saved when you start a download and when the window closes. Language and dark mode are also saved as soon as you change them. Delete the file to reset everything. Language changes apply immediately. Dark mode applies after a restart.
 
 Video quality is a cap: `Best` takes the highest available, otherwise the best stream at or below the chosen height. mp4 and webm prefer streams that already fit the container. If the video has no such streams at that quality, yt-dlp may fail to merge. Use mkv, which accepts anything.
@@ -41,6 +43,10 @@ Video quality is a cap: `Best` takes the highest available, otherwise the best s
 ## Localisation
 
 The UI is available in English (default) and Hungarian. Control text is looked up in `Resources.resx` / `Resources.hu.resx` by the control's `Name`. See `CLAUDE.md` for the details.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

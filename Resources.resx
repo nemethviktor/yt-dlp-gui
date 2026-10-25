@@ -183,4 +183,22 @@ Continue anyway?</value>
   <data name="opt_QualityBest" xml:space="preserve">
     <value>Best</value>
   </data>
+  <data name="btn_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="frmAbout" xml:space="preserve">
+    <value>About yt-dlp GUI</value>
+  </data>
+  <data name="btn_About_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="lbl_About_Description" xml:space="preserve">
+    <value>A small, simple front-end for yt-dlp.</value>
+  </data>
+  <data name="lbl_About_Disclaimer" xml:space="preserve">
+    <value>This is an independent, unofficial tool. It is not endorsed by, affiliated with, or sponsored by yt-dlp or YouTube. You are responsible for following the terms of service of the sites you use and applicable copyright law.</value>
+  </data>
+  <data name="fmt_AboutVersion" xml:space="preserve">
+    <value>Version {0}, build {1} ({2:yyyy-MM-dd})</value>
+  </data>
 </root>

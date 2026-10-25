@@ -208,6 +208,12 @@ namespace YtDlpGUI
             UpdateVideoOptionsEnabled();
         }
 
+        private void btn_About_Click(object sender, EventArgs e)
+        {
+            using frmAbout about = new(languageCode: languageCode) { Icon = Icon };
+            _ = about.ShowDialog(this);
+        }
+
         private void cbx_DarkMode_CheckedChanged(object sender, EventArgs e)
         {
             if (!nowLoading)
@@ -246,26 +252,7 @@ namespace YtDlpGUI
 
         private void ReloadAllControlLabels(string languageCode)
         {
-            foreach (Control control in GetAllControls(control: this))
-            {
-                string text = HelperLocalisationResourceManager.ReturnControlText(
-                    controlName: control.Name,
-                    languageCode: languageCode);
-
-                // Controls without a resource key (text boxes etc.) keep their current text.
-                if (text != string.Empty)
-                {
-                    control.Text = text;
-                }
-            }
-        }
-
-        internal IEnumerable<Control> GetAllControls(Control control)
-        {
-            IEnumerable<Control> controls = control.Controls.Cast<Control>();
-
-            return controls.SelectMany(selector: GetAllControls)
-                .Concat(second: controls);
+            HelperLocalisationResourceManager.ApplyLabels(root: this, languageCode: languageCode);
         }
 
         #endregion

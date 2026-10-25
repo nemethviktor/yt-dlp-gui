@@ -179,6 +179,60 @@ namespace YtDlpGUI {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "About"
+        /// </summary>
+        public static string btn_About {
+            get {
+                return ResourceManager.GetString("btn_About", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "About yt-dlp GUI"
+        /// </summary>
+        public static string frmAbout {
+            get {
+                return ResourceManager.GetString("frmAbout", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "Close"
+        /// </summary>
+        public static string btn_About_Close {
+            get {
+                return ResourceManager.GetString("btn_About_Close", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "A small, simple front-end for yt-dlp."
+        /// </summary>
+        public static string lbl_About_Description {
+            get {
+                return ResourceManager.GetString("lbl_About_Description", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "This is an independent, unofficial tool. It is not endorsed by, affiliated with, or sponsored by yt-dlp or YouTube. You are responsible for following the terms of service of the sites you use and applicable copyright law."
+        /// </summary>
+        public static string lbl_About_Disclaimer {
+            get {
+                return ResourceManager.GetString("lbl_About_Disclaimer", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "Version {0}, build {1} ({2:yyyy-MM-dd})"
+        /// </summary>
+        public static string fmt_AboutVersion {
+            get {
+                return ResourceManager.GetString("fmt_AboutVersion", resourceCulture) ?? string.Empty;
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Video Format"
         /// </summary>
         public static string lbl_VideoFormat {
@@ -378,6 +432,30 @@ namespace YtDlpGUI {
         ///   Looks up a localized string similar to YT-DLP Location must be provided...!.
         /// </summary>
         msgb_MissingYTDLP_Location,
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        btn_About,
+        /// <summary>
+        ///   Looks up a localized string similar to About yt-dlp GUI.
+        /// </summary>
+        frmAbout,
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        btn_About_Close,
+        /// <summary>
+        ///   Looks up a localized string similar to A small, simple front-end for yt-dlp..
+        /// </summary>
+        lbl_About_Description,
+        /// <summary>
+        ///   Looks up a localized string similar to This is an independent, unofficial tool. It is not endorsed by, affiliated with, or sponsored by yt-dlp or YouTube. You are responsible for following the terms of service of the sites you use and applicable copyright law..
+        /// </summary>
+        lbl_About_Disclaimer,
+        /// <summary>
+        ///   Looks up a localized string similar to Version {0}, build {1} ({2:yyyy-MM-dd}).
+        /// </summary>
+        fmt_AboutVersion,
         /// <summary>
         ///   Looks up a localized string similar to Video Format.
         /// </summary>
