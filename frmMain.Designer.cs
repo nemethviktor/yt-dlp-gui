@@ -327,7 +327,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5, 6, 5, 6);
             Name = "frmMain";
-            Text = "YouTube-DLP GUI";
+            Text = "yt-dlp GUI";
             FormClosing += frmMain_FormClosing;
             Load += frmMain_Load;
             gbx_DownloadSettings.ResumeLayout(false);
